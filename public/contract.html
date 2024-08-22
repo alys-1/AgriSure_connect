@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Contract</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <h1>Form Contract</h1>
+    <div class="contract-form">
+        <form id="contract-form" action="/form_contract" method="POST">
+            <input type="hidden" name="farmer_id" value="1">
+            <input type="hidden" name="buyer_id" value="2">
+            <input type="text" name="product" placeholder="Product" required>
+            <input type="number" name="quantity" placeholder="Quantity" required>
+            <input type="number" step="0.01" name="price" placeholder="Price" required>
+            <input type="date" name="delivery_date" required>
+            <button type="submit">Form Contract</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contract-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/form_contract', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.text();
+            alert(result);
+        });
+    </script>
+</body>
+</html>
