@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assured Contract Farming System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Assured Contract Farming System</h1>
+        <nav>
+            <a href="#farmers">Farmers</a>
+            <a href="#buyers">Buyers</a>
+            <a href="#contracts">Contracts</a>
+        </nav>
+    </header>
+
+    <section id="farmers">
+        <h2>Farmer Registration</h2>
+        <form id="farmerForm">
+            <label for="farmerName">Farmer Name:</label>
+            <input type="text" id="farmerName" required>
+            
+            <label for="produce">Produce:</label>
+            <input type="text" id="produce" required>
+            
+            <label for="quantity">Quantity (in kg):</label>
+            <input type="number" id="quantity" required>
+            
+            <button type="submit">Register Farmer</button>
+        </form>
+        <div id="farmerList"></div>
+    </section>
+
+    <section id="buyers">
+        <h2>Buyer Registration</h2>
+        <form id="buyerForm">
+            <label for="buyerName">Buyer Name:</label>
+            <input type="text" id="buyerName" required>
+            
+            <label for="requirement">Required Produce:</label>
+            <input type="text" id="requirement" required>
+            
+            <label for="requiredQuantity">Required Quantity (in kg):</label>
+            <input type="number" id="requiredQuantity" required>
+            
+            <button type="submit">Register Buyer</button>
+        </form>
+        <div id="buyerList"></div>
+    </section>
+
+    <section id="contracts">
+        <h2>Available Contracts</h2>
+        <div id="contractList"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
